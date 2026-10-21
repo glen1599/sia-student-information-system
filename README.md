@@ -1,20 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SIA — Student Academic Information System
 
-# Run and deploy your AI Studio app
+A student academic portal built with **React + TypeScript + Vite**. One place for KRS (course planning), grades, tuition and payments, schedules, notifications, profile, campus services and a small poster maker — plus an AI chat sidebar for quick questions.
 
-This contains everything you need to run your app locally.
+> Coursework project. The data layer is mocked in `constants.ts` / `types.ts`; wire it to your campus API before using it for real.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1SfimY9vV8-fI8QKMuQZuLTWE3as2rr8L
+## Pages
 
-## Run Locally
+| Route / page | What it does |
+|---|---|
+| `Dashboard` | GPA, credits, payment status and today's schedule at a glance |
+| `KRS` | Plan and review the semester course load |
+| `Grades` | Transcript view with per-course scores and grade points |
+| `Finance` | Tuition bill, payment status and history |
+| `Schedule` | Weekly class timetable |
+| `Notifications` | Campus announcements |
+| `Profile` | Student identity and programme details |
+| `Services` | Campus service shortcuts |
+| `PosterMaker` | Generates a shareable poster from student data |
 
-**Prerequisites:**  Node.js
+## Stack
 
+- React 19 + TypeScript, Vite
+- Tailwind (CDN config in `index.html`)
+- `lucide-react` icons
+- AI chat sidebar component (`components/AIChatSidebar.tsx`)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Run locally
+
+```sh
+npm install
+npm run dev        # Vite dev server
+npm run build      # production build
+npm run preview    # preview the build
+```
+
+Open the URL Vite prints (usually <http://localhost:5173>).
+
+## Structure
+
+```text
+App.tsx              app shell and page switching
+components/          Layout, AI chat sidebar
+pages/               Dashboard, KRS, Grades, Finance, Schedule,
+                     Notifications, Profile, Services, PosterMaker
+constants.ts         mock campus data
+types.ts             shared types
+```
+
+## License
+
+MIT
